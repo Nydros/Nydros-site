@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Framework | Nydros</title>
+  <meta name="description" content="Discover the Nydros Assessment Framework and learn how it guides holistic evaluations across strategy, technology, data & AI, people & culture and innovation.">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-RXf+QSDCUQs6Jo2dIZm+lT1w6RI2w4IB4GKC+3AdKqD0LjPfN2sp9mybca+X9iZ1dvKq6TRYhIsbHZH5GzKcQg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo"><a href="index.html"><img src="assets/img/logo.png" alt="Nydros"></a></div>
+    <button class="nav-toggle" aria-label="toggle navigation"><i class="fas fa-bars"></i></button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="capabilities.html">Capabilities</a></li>
+      <li><a href="framework.html" class="active">Our Framework</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="insights.html">Insights</a></li>
+    </ul>
+    <div class="actions">
+      <a href="contact.html" class="contact-btn">Contact Us</a>
+    </div>
+  </nav>
+  <section class="page-hero">
+    <h1>Our Framework</h1>
+  </section>
+  <section class="page-content">
+    <p>The Nydros Assessment Framework is a holistic model that evaluates your organization across five critical dimensions. It highlights strengths and weaknesses, prioritizes opportunities and shapes a roadmap for sustainable transformation. Each pillar is assessed on maturity, impact and readiness.</p>
+  </section>
+  <section class="framework">
+    <div class="text">
+      <h2>Framework Pillars</h2>
+      <h3>A multi‑dimensional view of your enterprise</h3>
+      <p>By examining strategy, technology, data & AI, people & culture and innovation, we ensure no dimension is overlooked. This comprehensive view reveals how decisions in one area influence the others.</p>
+      <p>Our consultants work with you to interpret results, set priorities and develop actionable initiatives that accelerate growth and resiliency.</p>
+    </div>
+    <div class="chart-container">
+      <canvas id="frameworkChart"></canvas>
+      <div class="maturity-list">
+        <div class="maturity-item">
+          <span>Strategy</span>
+          <div class="progress-bar"><span style="width: 70%;"></span></div>
+        </div>
+        <div class="maturity-item">
+          <span>Technology</span>
+          <div class="progress-bar"><span style="width: 60%;"></span></div>
+        </div>
+        <div class="maturity-item">
+          <span>Data &amp; AI</span>
+          <div class="progress-bar"><span style="width: 75%;"></span></div>
+        </div>
+        <div class="maturity-item">
+          <span>People &amp; Culture</span>
+          <div class="progress-bar"><span style="width: 80%;"></span></div>
+        </div>
+        <div class="maturity-item">
+          <span>Innovation</span>
+          <div class="progress-bar"><span style="width: 65%;"></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="left">
+      <img src="assets/img/logo.png" alt="Nydros">
+      <span>© Nydros LLC 2026. All rights reserved.</span>
+    </div>
+    <div class="right">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="https://www.linkedin.com" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const ctx2 = document.getElementById('frameworkChart');
+      if (ctx2 && window.Chart) {
+        const data2 = {
+          labels: ['Strategy', 'Technology', 'Data & AI', 'People & Culture', 'Innovation'],
+          datasets: [{
+            backgroundColor: 'rgba(201, 164, 92, 0.2)',
+            borderColor: 'rgba(201, 164, 92, 1)',
+            pointBackgroundColor: 'rgba(201, 164, 92, 1)',
+            data: [70, 60, 75, 80, 65]
+          }]
+        };
+        new Chart(ctx2, {
+          type: 'radar',
+          data: data2,
+          options: {
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: {
+              r: {
+                angleLines: { color: 'rgba(246,244,237,0.12)' },
+                grid: { color: 'rgba(246,244,237,0.22)' },
+                pointLabels: { color: '#fff', font: { size: 12 } },
+                ticks: { backdropColor: 'transparent', color: '#fff', showLabelBackdrop: false },
+                min: 0, max: 100
+              }
+            }
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
